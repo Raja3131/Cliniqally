@@ -1,0 +1,14 @@
+{
+    "apps": {
+        "name": "cliniqally-backend",
+        "cwd": "/var/lib/jenkins/workspace/cliniqally-backend_beta/dist",
+        "script": "./cliniqally-backend.js",
+        "interpreter": "node",
+        "autorestart": true,
+        "max_restarts": 300,
+        "restart_delay": 900,
+        "max_memory_restart": "300M",
+        "instances": "max",
+        "exec_mode": "cluster"
+    }
+}

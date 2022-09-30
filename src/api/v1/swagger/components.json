@@ -1,0 +1,400 @@
+{
+  "components": {
+    "requestBodies": {
+      "Admin": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "required": true,
+            "default": "example@ex.com"
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "UpdatePassword": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "Patient": {
+        "type": "object",
+        "properties": {
+          "consumer_id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "required": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "dob": {
+            "type": "string"
+          },
+          "emergency_contact": {
+            "type": "bigint"
+          },
+          "height": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          }
+        }
+      },
+      "ServiceProvider": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": true,
+            "default": "Doctor Name"
+          },
+          "country_code": {
+            "type": "string",
+            "required": true,
+            "default": "+91"
+          },
+          "mobile": {
+            "type": "string",
+            "required": true
+          },
+          "otp": {
+            "type": "string"
+          }
+        }
+      },
+      "ProviderTiming": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number",
+            "required": true,
+            "default": 1
+          },
+          "session_type": {
+            "type": "string",
+            "required": true,
+            "default": "Video"
+          },
+          "duration": {
+            "type": "number",
+            "required": true,
+            "default": 15
+          },
+          "providerTimings": {
+            "type": "array",
+            "required": true
+          }
+        }
+      },
+      "Clinic": {
+        "type": "object",
+        "properties": {
+          "provider_id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "required": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "integer"
+          },
+          "about_clinic": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Country": {
+        "type": "object",
+        "properties": {
+          "country_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "State": {
+        "type": "object",
+        "properties": {
+          "state_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "City": {
+        "type": "object",
+        "properties": {
+          "city_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Specialization": {
+        "type": "object",
+        "properties": {
+          "specialization_id": {
+            "type": "string"
+          },
+          "specialization": {
+            "type": "string"
+          }
+        }
+      },
+      "Registration": {
+        "type": "object",
+        "properties": {
+          "registration_council_id": {
+            "type": "string"
+          },
+          "registration_council_name": {
+            "type": "string"
+          }
+        }
+      },
+      "Degree": {
+        "type": "object",
+        "properties": {
+          "degree_id": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          }
+        }
+      },
+      "Speciality": {
+        "type": "object",
+        "properties": {
+          "clinic_speciality_id": {
+            "type": "string"
+          },
+          "clinic_speciality": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Occupation": {
+        "type": "object",
+        "properties": {
+          "occupation_id": {
+            "type": "string"
+          },
+          "occupation": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "BloodGroup": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string"
+          },
+          "blood_group": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Currency": {
+        "type": "object",
+        "properties": {
+          "currency_id": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "symbol_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Query": {
+        "type": "object",
+        "properties": {
+          "type_id": {
+            "type": "string"
+          },
+          "query_type": {
+            "type": "string"
+          },
+          "reason_id": {
+            "type": "string"
+          },
+          "query_reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "Success": {
+        "description": "Ok",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/success"
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Invalid Input provided",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apiError"
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Authorization failed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apiError"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "The specified resourse was not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apiError"
+            }
+          }
+        }
+      },
+      "ServerError": {
+        "description": "The specified resourse was not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/apiError"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "serviceProviderAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "jwt",
+        "in": "header"
+      },
+      "adminAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "in": "header"
+      },
+      "patientUserAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "success": {
+        "type": "object",
+        "properties": {}
+      },
+      "apiError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {}
+        }
+      }
+    }
+  }
+}
